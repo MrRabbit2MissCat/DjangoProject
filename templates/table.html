@@ -4,10 +4,18 @@
 {% endblock %}
 
 {% block body %}
-    {% for datum in data %}
-        {{ datum.id }}
-        {{ datum.name }}
-        {{ datum.email }}
-    {% endfor %}
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+    <table class="smart-green" border="1" cellspacing="0">
+
+        {% for datum in data %}
+            <tr style="width: 400px;height: 20px;">
+                <td>{{ datum.id }}</td>
+                <td>{{ datum.name }}</td>
+                <td>{{ datum.email }}</td>
+                <td>{{ datum.address }}</td>
+                <td>{{ datum.message }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 
 {% endblock %}

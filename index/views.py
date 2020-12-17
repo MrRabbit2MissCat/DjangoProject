@@ -40,7 +40,7 @@ def table(request):
         return render(
             request,
             "table.html",
-            {"data":users}
+            {"data": users}
         )
     elif request.method == "POST":
         pass
