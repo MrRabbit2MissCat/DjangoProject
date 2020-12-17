@@ -4,11 +4,21 @@
 {% endblock %}
 
 {% block body %}
-    <link rel="stylesheet" href="{% static 'form.css' %}">
-    <table class="smart-green" border="1" cellspacing="0">
+    <link rel="stylesheet" href="{% static 'table.css' %}">
 
+    <table class="pure-table">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Message</th>
+        </tr>
+        </thead>
+        <tbody>
         {% for datum in data %}
-            <tr style="width: 400px;height: 20px;">
+            <tr>
                 <td>{{ datum.id }}</td>
                 <td>{{ datum.name }}</td>
                 <td>{{ datum.email }}</td>
@@ -16,6 +26,7 @@
                 <td>{{ datum.message }}</td>
             </tr>
         {% endfor %}
+        </tbody>
     </table>
 
 {% endblock %}
