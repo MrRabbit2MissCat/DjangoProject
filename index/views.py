@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, QueryDict
 from index.models import UserModel
 from django.core import serializers
 
@@ -42,5 +42,8 @@ def table(request):
             "table.html",
             {"data": users}
         )
-    elif request.method == "POST":
-        pass
+    elif request.method == "DELETE":
+        delete = QueryDict(request.body)
+        print(delete.get("id"))
+        data = {"code": 200, "message": f"成功删除"}
+        return JsonResponse(data)
