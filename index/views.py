@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from index.models import UserModel
+from django.core import serializers
 
 
 # Create your views here.
@@ -15,7 +16,7 @@ def user(request):
     if request.method == "GET":
         return render(
             request,
-            "base.html"
+            "index.html",
         )
     elif request.method == "POST":
         user_id = 0
@@ -31,3 +32,15 @@ def user(request):
         u.save()
         data = {"code": 200, "message": f"{name}你好！信息录入成功"}
         return JsonResponse(data)
+
+
+def table(request):
+    if request.method == "GET":
+        users = UserModel.objects.all()
+        return render(
+            request,
+            "table.html",
+            {"data":users}
+        )
+    elif request.method == "POST":
+        pass
