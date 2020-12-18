@@ -20,7 +20,7 @@
         <tbody>
         {% for datum in data %}
             <tr>
-                <td>{{ datum.id }}</td>
+                <td>{{ forloop.counter }}</td>
                 <td>{{ datum.name }}</td>
                 <td>{{ datum.email }}</td>
                 <td>{{ datum.address }}</td>

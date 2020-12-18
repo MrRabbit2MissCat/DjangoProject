@@ -28,7 +28,9 @@ def user(request):
         if last_u:
             user_id = int(last_u.id) + 1
 
-        u = UserModel.objects.create(id=user_id, name=name, email=email, address=address, message=message)
+        u = UserModel.objects.create(id=user_id, name=name,
+                                     email=email, address=address,
+                                     message=message)
         u.save()
         data = {"code": 200, "message": f"{name}你好！信息录入成功"}
         return JsonResponse(data)
