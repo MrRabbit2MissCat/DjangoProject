@@ -123,3 +123,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+# 上传图片的路径
+IMG_UPLOAD = os.path.join(BASE_DIR, 'static/images')

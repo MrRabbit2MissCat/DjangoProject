@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="jumbotron">
+
+        <h1><small>PVP-SVM:sequence-based prediction of bacteriophage virion proteins using a support vector
+            machine</small></h1>
+    </div>
+    <ul class="nav nav-pills nav-justified">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">README</a></li>
+        <li role="presentation"><a href="#">DATA SETS</a></li>
+        <li role="presentation"><a href="#">CONTACT</a></li>
+    </ul>
+
+</div>
+<div class="container">
+    <h1>Welcome to the Home Page of PVP-SVM </h1>
+    <h1><small>PVP-SVM is web based prediction server for bacteriophage virion proteins. SVM-based prediction model was
+        developed using the optimal feature set selected by random forest. The optimal feature set includes, amino acid
+        composition, atomic composition, dipeptide composition, and physiochemical properties as an input feature. For a
+        given peptide, PVP-SVM predicts its class and probability values.</small></h1>
+
+    <form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="fastaFile" value="" class="fastaFile">
+        <input type="submit" name="name" value="提交" class="sub">
+    </form>
+</div>
+</body>
+</html>
