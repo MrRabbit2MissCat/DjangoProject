@@ -44,6 +44,7 @@ def table(request):
         )
     elif request.method == "DELETE":
         delete = QueryDict(request.body)
-        print(delete.get("id"))
+        delete_id = delete.get("id")
+        UserModel.objects.get(id=delete_id).delete()
         data = {"code": 200, "message": f"成功删除"}
         return JsonResponse(data)

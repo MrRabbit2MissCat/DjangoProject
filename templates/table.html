@@ -36,7 +36,6 @@
         function removeTr(td) {
             $(td).parents("tr").remove()
             let Data={"id":$(td).val()}
-            alert($.ajaxSetup()["data"]['csrfmiddlewaretoken'])
             $.ajax({
                     url: "{% url 'table' %}",
                     headers: {"X-CSRFtoken": $.ajaxSetup()["data"]['csrfmiddlewaretoken']},
