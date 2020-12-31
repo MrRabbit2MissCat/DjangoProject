@@ -1,2 +1,0 @@
-# DjangoProject
-## Test for github
