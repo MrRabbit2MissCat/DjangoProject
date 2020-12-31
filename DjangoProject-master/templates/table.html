@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}
+    表格页面
+{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="{% static 'table.css' %}">
+
+    <table class="pure-table" align="center">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Message</th>
+            <th>Option</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for datum in data %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ datum.name }}</td>
+                <td>{{ datum.email }}</td>
+                <td>{{ datum.address }}</td>
+                <td>{{ datum.message }}</td>
+                <td>
+                    <button id="deleteButton" value="{{ datum.id }}" onclick="removeTr(this)">删除</button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <script>
+        function removeTr(td) {
+            $(td).parents("tr").remove()
+            let Data={"id":$(td).val()}
+            $.ajax({
+                    url: "{% url 'table' %}",
+                    headers: {"X-CSRFtoken": $.ajaxSetup()["data"]['csrfmiddlewaretoken']},
+                    type: "delete",
+                    data: Data,
+                    success: function (data) {
+                        if (data.code == 200) {
+                            alert(data.message)
+                        }
+                    }
+                })
+        }
+        
+    </script>
+{% endblock %}
