@@ -42,8 +42,18 @@
         </label>
 
     </form>
-
-    <script>
+    {% verbatim %}
+    <div id="app">
+        <p>{{ message }}</p>
+    </div>
+    {% endverbatim %}
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!'
+            }
+        })
         $("#but").click(function () {
             let name = $("#name").val()
             let email = $("#email").val()
@@ -72,7 +82,7 @@
         })
         $("#table_show").click(
             function () {
-                window.location.href='{% url "table" %}'
+                window.location.href = '{% url "table" %}'
             }
         )
     </script>
