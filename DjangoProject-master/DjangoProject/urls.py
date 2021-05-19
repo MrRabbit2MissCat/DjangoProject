@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from index import views
+from django.conf import settings
+from django.conf.urls import url
+from django.views import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('user/', views.user, name='user'),
-    path('table/', views.table, name='table')
+    path('', views.user, name='user'),
+    path('table/', views.table, name='table'),
+    url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}, name='static'),
 ]

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/DjangoProject.iml" filepath="$PROJECT_DIR$/.idea/DjangoProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../MyProject/.idea/MyProject.iml" filepath="$PROJECT_DIR$/../MyProject/.idea/MyProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../OnlineExams/.idea/OnlineExams.iml" filepath="$PROJECT_DIR$/../OnlineExams/.idea/OnlineExams.iml" />
+      <module fileurl="file://E:/Project-yunhgu/.idea/Project-yunhgu.iml" filepath="E:/Project-yunhgu/.idea/Project-yunhgu.iml" />
+    </modules>
+  </component>
+</project>

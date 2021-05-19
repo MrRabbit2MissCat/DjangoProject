@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'fmzbk5pwo_g^_%0ejm%df!o1)j)xo8#=2h%3y-4)j!7lw4d$bg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -80,10 +80,10 @@ DATABASES = {
         {
             'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
             'NAME': 'yunhgu',  # 数据库名称
-            'HOST': '127.0.0.1',  # 数据库地址，本机 ip 地址 127.0.0.1
+            'HOST': '10.50.132.157',  # 数据库地址，本机 ip 地址 127.0.0.1
             'PORT': 3306,  # 端口
             'USER': 'root',  # 数据库用户名
-            'PASSWORD': '123456',  # 数据库密码
+            'PASSWORD': 'root',  # 数据库密码
         }
 }
 
@@ -122,7 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = 'static'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, '/static/'),)
 
 # 上传图片的路径
 IMG_UPLOAD = os.path.join(BASE_DIR, 'static/images')
